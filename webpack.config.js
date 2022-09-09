@@ -25,6 +25,10 @@ module.exports = {
       },
     ],
   },
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./public/index.html",
