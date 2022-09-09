@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack-dev-server --mode production --open"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
