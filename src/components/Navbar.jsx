@@ -6,9 +6,10 @@ import ArchiveIcon from "@mui/icons-material/Archive";
 import DialpadIcon from '@mui/icons-material/Dialpad';
 
 const Navbar = ({ screen, setScreen }) => {
+
   return (
     <footer>
-      <span className="nav-item">
+      <span className="nav-item" style={{color:green}}>
         <PhoneEnabledIcon
           onClick={() => {
             setScreen("Home");
