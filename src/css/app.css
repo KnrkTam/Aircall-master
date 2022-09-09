@@ -110,7 +110,7 @@ footer {
   margin: 2%;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .activity-time {
