@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production --open"
+    "build": "webpack-dev-server --mode production"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -27,7 +27,8 @@
     "react-dom": "^17.0.0",
     "react-hot-toast": "^2.3.0",
     "react-router-dom": "^6.3.0",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
     "babel-preset-env": "1.7.0",
