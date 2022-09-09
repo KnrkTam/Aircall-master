@@ -1,8 +1,6 @@
 {
   "name": "frontend-hiring-challenge",
   "version": "1.0.0",
-  "homepage": "https://knrktam.github.io/Aircall-master",
-  "deploy": "gh-pages -d build",
   "description": "Leap test",
   "main": "index.js",
   "repository": "",
@@ -10,11 +8,8 @@
   "license": "",
   "private": false,
   "scripts": {
-    
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
