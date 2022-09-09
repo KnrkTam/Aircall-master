@@ -11,7 +11,6 @@ import Archive from "./components/Archive.jsx";
 const App = () => {
   const [data] = callApi();
   const [screen, setScreen] = useState("Home");
-  console.log(screen)
 
   return (
     <div className="container">

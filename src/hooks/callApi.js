@@ -16,7 +16,7 @@ export function callApi() {
 
   useEffect(() => {
     getCallData();
-  }, []);
+  }, [callData]);
 
   return [callData];
 }

@@ -15,10 +15,9 @@ export default function Archive({data}) {
         activitiesByDate[date].push(call);
         }
       } else {
-                if (call.is_archived) {
-
-        activitiesByDate[date] = [call];
-                }
+        if (call.is_archived) {
+          activitiesByDate[date] = [call];
+        }
       }
     // }
   })

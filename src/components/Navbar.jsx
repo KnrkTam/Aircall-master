@@ -9,7 +9,10 @@ const Navbar = ({ screen, setScreen }) => {
 
   return (
     <footer>
-      <span className="nav-item" style={{color:green}}>
+      <span
+        className="nav-item"
+        style={screen === "Home" ? { color: "#2AC41F" } : null}
+      >
         <PhoneEnabledIcon
           onClick={() => {
             setScreen("Home");
@@ -25,7 +28,10 @@ const Navbar = ({ screen, setScreen }) => {
       <span className="nav-item">
         <SettingsIcon />
       </span>
-      <span className="nav-item">
+      <span
+        className="nav-item"
+        style={screen === "Archive" ? { color: "#2AC41F" } : null}
+      >
         <ArchiveIcon
           onClick={() => {
             setScreen("Archive");
