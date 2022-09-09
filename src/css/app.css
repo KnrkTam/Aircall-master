@@ -117,12 +117,12 @@ footer {
   width: 10%;
   height: min-content;
   border-left: 2px dotted var(--color-frame);
-  padding: 5%;
+  padding: 5% 0 5% 14%;
   display: flex;
   align-items: center;
   filter: brightness(75%);
   margin: auto 0;
-
+  justify-content: right
 }
 
 
@@ -268,3 +268,7 @@ button:hover {
 .remove-archive {
   margin: 0 auto;
 }
+/* 
+.remove-archive:hover {
+  color: var(--color-green)
+} */

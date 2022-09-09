@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ActivityDetail from "./ActivityDetail.jsx";
 import moment from "moment";
 
@@ -6,6 +6,10 @@ import moment from "moment";
 
 export default function ActivityFeed({data}) {
   const activitiesByDate = {};
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [infoId, setInfoId] = useState(0);
+
 
   data.map((call) => {
     let date = new Date(call.created_at).toDateString();
@@ -28,7 +32,7 @@ export default function ActivityFeed({data}) {
         </div>
         {Pcalls
           ? Pcalls.map((Pcall) => (
-              <ActivityDetail key={Pcall.id} call={Pcall} />
+              <ActivityDetail key={Pcall.id} call={Pcall} setIsOpen={setIsOpen} setInfoId={setInfoId} isOpen={isOpen} infoId={infoId}/>
             ))
           : null}
       </div>

@@ -13,7 +13,7 @@ import {setArchive} from "../hooks/setArchive.js"
 import StarButton from "./StarBtn.jsx";
 
 
-export default function ActivityDetail({ call }) {
+export default function ActivityDetail({ call, setIsOpen, setInfoId, isOpen, infoId }) {
   let date = new Date(call.created_at);
   let activityTime = moment(date).format("h:mm");
   let activityAM = moment(date).format("a").toUpperCase();
@@ -28,23 +28,24 @@ export default function ActivityDetail({ call }) {
   let answeredOutbound = direction === "outbound" && call.call_type === "answered";
   let voiceMail = call.call_type === "voicemail";
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [infoId, setInfoId] = useState(0);
-  const [isArchived, setIsArchived] = useState(call.is_archived);
+  
 
-  const openInfo = (id) => {
-    setIsOpen(!isOpen);
-    setInfoId(id);
+  const handleInfo = (id) => {
+    if (id === infoId) {
+      setIsOpen(!isOpen);
+    } else {
+      setIsOpen(true)
+      setInfoId(id);
+    }
   };
-  useEffect(() => {
-   
-  }, [isArchived])
+
+
   
   return (
     <React.Fragment>
       <Card
         sx={{ minWidth: 275, margin: "1%", padding: "5%" }}
-        onClick={() => openInfo(call.id)}
+        onClick={() => handleInfo(call.id)}
         className="card"
       >
         <div className="activity-detail items-center">
@@ -73,9 +74,6 @@ export default function ActivityDetail({ call }) {
             <span className="text-xs text-gray">via {via}</span>
           </div>
           <div className="activity-action text-xs text-gray">
-            {/* <div className="action-icon" onClick={() => openInfo(call.id)}>
-              {isOpen && infoId ? <InfoIcon /> : <InfoOutlinedIcon />}
-            </div> */}
             <div className="action-icon">
               <StarButton id={call.id} />
             </div>
