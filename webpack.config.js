@@ -1,8 +1,17 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-// const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
+const path = require("path");
 
 module.exports = {
   module: {
+    entry: "./src/index.js",
+    output: {
+      path: path.resolve(__dirname, "build"), 
+      publicPath: "/",
+      filename: "bundle.js",
+    },
+    devServer: {
+      contentBase: "./build",
+    },
     rules: [
       {
         test: /\.html$/,
@@ -31,6 +40,5 @@ module.exports = {
       template: "./public/index.html",
       filename: "./index.html",
     }),
-    // new WindiCSSWebpackPlugin(),
   ],
 };
