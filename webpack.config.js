@@ -1,5 +1,4 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-// const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
 
 module.exports = {
   module: {
@@ -31,6 +30,5 @@ module.exports = {
       template: "./public/index.html",
       filename: "./index.html",
     }),
-    // new WindiCSSWebpackPlugin(),
   ],
 };
