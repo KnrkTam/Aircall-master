@@ -47,7 +47,11 @@ export default function ActivityDetail({ call }) {
 
   return (
     <React.Fragment>
-      <Card sx={{ minWidth: 275, margin: "1%", padding: "5%" }}>
+      <Card
+        sx={{ minWidth: 275, margin: "1%", padding: "5%" }}
+        onClick={() => openInfo(call.id)}
+        className="card"
+      >
         <div className="activity-detail items-center">
           <div className="activity-icon">
             {missedInbound && <PhoneMissedIcon style={{ color: "red" }} />}
@@ -74,13 +78,11 @@ export default function ActivityDetail({ call }) {
             <span className="text-xs text-gray">via {via}</span>
           </div>
           <div className="activity-action text-xs text-gray">
-            <div className="action-icon" onClick={() => openInfo(call.id)}>
+            {/* <div className="action-icon" onClick={() => openInfo(call.id)}>
               {isOpen && infoId ? <InfoIcon /> : <InfoOutlinedIcon />}
-            </div>
-            <div
-              className="action-icon"
-            >
-              <StarButton id={call.id}/>
+            </div> */}
+            <div className="action-icon">
+              <StarButton id={call.id} />
             </div>
           </div>
           <div className="activity-time text-gray">

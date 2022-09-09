@@ -67,10 +67,12 @@ footer {
 
 
 .card {
-  padding: 2px;
-  margin: 1rem 1rem;
-  background-color: white;
-  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card:hover{
+  filter: brightness(0.9); 
+  transition: 0.2s ease-in-out;
 }
 
 /* Loader */
@@ -108,12 +110,7 @@ footer {
   margin: 2%;
   display: flex;
   justify-content: space-between;
-}
-
-.activity-detail:hover{
-  filter: brightness(0.9); 
-  transition: 0.2s ease-in-out;
-
+  cursor: pointer;
 }
 
 .activity-time {
@@ -218,6 +215,10 @@ hr.dotted {
   padding: 0 2%;
 }
 
+.mt-10 {
+  margin-top: 10px;
+}
+
 .am-box {
   border: 2px solid var(--color-gray);
   padding: 1px;
@@ -234,4 +235,36 @@ hr.dotted {
 
 .action-icon {
   cursor: pointer;
+}
+
+button {
+  background-color: var(--color-gray);
+  border: none;
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+button:hover {
+  filter: brightness(1.1);
+  transition: 0.2s ease-in-out;
+
+}
+.remove-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.remove-archive {
+  margin: 0 auto;
 }

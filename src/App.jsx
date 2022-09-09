@@ -7,6 +7,8 @@ import ActivityFeed from "./components/ActivityFeed.jsx";
 import { callApi } from "./hooks/callApi.js";
 import Navbar from "./components/Navbar.jsx";
 import Archive from "./components/Archive.jsx";
+import { Toaster } from "react-hot-toast";
+
 
 const App = () => {
   const [data] = callApi();
@@ -17,7 +19,12 @@ const App = () => {
       <Header />
       {screen === "Home" && <ActivityFeed data={data} />}
       {screen === "Archive" && <Archive data={data} />}
-
+      <Toaster
+        containerStyle={{
+          top: 150,
+          
+        }}
+      />
       <Navbar setScreen={setScreen} screen={screen} />
     </div>
   );

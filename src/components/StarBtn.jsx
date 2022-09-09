@@ -1,34 +1,34 @@
 import React, { useEffect } from 'react';
 import { checkArchive } from "../hooks/checkArchive.js";
 import { setArchive } from "../hooks/setArchive.js";
-import StarOutlineIcon from "@mui/icons-material/StarOutline";
-import StarRateIcon from "@mui/icons-material/StarRate";
+import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
+import StarRoundedIcon from "@mui/icons-material/StarRounded";
 
+import { toast } from "react-hot-toast";
 export default function StarButton ({id}) {
-  // Listen to call archive
-
+  // Check call archive status
   const callDetail = checkArchive(id);
-
-  // const [heartDoc] = useDocument(heartRef);
 
   // create user-to-post relationship
   const addArchive =  () => {
     setArchive(id, true)
+    toast.success("Call archived")
   };
 
   // remove user-to-post relationship
   const removeArchive =  () => {
-
      setArchive(id, false);
+    toast.success("Call unarchived");
+
   };
 
   return callDetail.is_archived ? (
     <div onClick={removeArchive}>
-      <StarRateIcon style={{ color: "#ffcd3c" }} />
+      <StarRoundedIcon style={{ color: "#ffcd3c" }} />
     </div>
   ) : (
     <div onClick={addArchive}>
-      <StarOutlineIcon />
+      <StarBorderRoundedIcon />
     </div>
   );
 }

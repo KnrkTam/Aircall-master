@@ -17,8 +17,5 @@ export function checkArchive(id) {
   useEffect(() => {
     checkArchiveId();
   }, [callData]);
-
-          // console.log(callData);
-
   return callData
 }
