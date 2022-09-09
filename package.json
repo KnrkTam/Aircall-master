@@ -6,7 +6,7 @@
   "repository": "",
   "author": "",
   "license": "",
-  "private": false,
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
