@@ -1,8 +1,13 @@
 import React from "react";
 import ActivityDetail from "./ActivityDetail.jsx";
 import moment from "moment";
+import { resetAPI } from "../hooks/resetAPI.js";
 
 export default function Archive({ data }) {
+
+  const unArchiveAll  = function() {
+    resetAPI();
+  }
   const activitiesByDate = {};
 
   data.map((call) => {
@@ -51,7 +56,9 @@ export default function Archive({ data }) {
       </div>
       <div className="remove-btn-container">
         {activityFeed.length ? (
-          <button className="remove-archive">Remove All Archive calls</button>
+          <button className="remove-archive" onClick={unArchiveAll}>
+            Remove All Archive calls
+          </button>
         ) : null}
       </div>
     </React.Fragment>

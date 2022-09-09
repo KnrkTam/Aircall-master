@@ -40,11 +40,6 @@ export default function ActivityDetail({ call }) {
    
   }, [isArchived])
   
- const handleoArchive = (id, is_archived) => {
-   setArchive(id, !is_archived);
-   setIsArchived(is_archived);
- };
-
   return (
     <React.Fragment>
       <Card
